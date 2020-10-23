@@ -5,6 +5,7 @@
 #include "../Public/PlayerInformationBox.h"
 #include "../Public/PlayerFaceSelect.h"
 #include "../Public/MenuEntirety.h"
+#include "Kismet/GameplayStatics.h"
 
 void UPlayerSelectMainMenu::NativeOnInitialized()
 {

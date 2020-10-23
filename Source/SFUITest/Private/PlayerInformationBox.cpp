@@ -5,6 +5,8 @@
 #include "Components/TextBlock.h"
 #include "Components/ProgressBar.h"
 #include "Components/Button.h"
+#include "Kismet/GameplayStatics.h"
+#include "../Public/MyGameInstance.h"
 
 void UPlayerInformationBox::NativeOnInitialized()
 {
@@ -32,6 +34,14 @@ void UPlayerInformationBox::SetPlayerInformation(FPlayerInformation player)
 	HealthBar-> SetPercent((300.0f / player.Health) / 10.0f);
 	OxygenBar-> SetPercent((300.0f / player.Oxygen) / 10.0f);
 	StaminaBar->SetPercent((300.0f/player.Stamina)  / 10.0f);
+
+	UMyGameInstance* inst = Cast<UMyGameInstance>(GetWorld()->GetGameInstance());
+
+	if (inst)
+	{
+		FString nTag = player.PlayerName.ToString();
+		inst->searchTag = *nTag ;
+	}
 }
 
 void UPlayerInformationBox::SetOwningMenu()
@@ -41,5 +51,5 @@ void UPlayerInformationBox::SetOwningMenu()
 
 void UPlayerInformationBox::SelectPlayer()
 {
-
+	UGameplayStatics::OpenLevel(GetWorld(), FName("Game"));
 }
