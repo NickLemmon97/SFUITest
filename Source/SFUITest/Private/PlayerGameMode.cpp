@@ -20,15 +20,14 @@ void APlayerGameMode::BeginPlay()
 		UGameplayStatics::GetAllActorsWithTag(GetWorld(), inst->searchTag, actors);
 		if (actors.IsValidIndex(0))
 		{
+			APawn* oldPawn = GetWorld()->GetFirstPlayerController()->GetPawn();
 			GetWorld()->GetFirstPlayerController()->UnPossess();
-			GetWorld()->GetFirstPlayerController()->Possess(Cast<APawn>(actors[0]));
-		}
+			oldPawn->SetActorLocation(FVector(0, 0, -5000));
+			oldPawn->Destroy();
 
-		if (actors.IsValidIndex(0))
-		{
-			actors[0]->SetActorLocation( FVector(0,0,10) );
-		}
-				
+			GetWorld()->GetFirstPlayerController()->Possess(Cast<APawn>(actors[0]));
+			GetWorld()->GetFirstPlayerController()->GetPawn()->SetActorLocation(FVector(0, 0, 25));
+		}	
 	}
 
 }
