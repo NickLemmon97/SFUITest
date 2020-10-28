@@ -29,5 +29,4 @@ void APlayerGameMode::BeginPlay()
 			GetWorld()->GetFirstPlayerController()->GetPawn()->SetActorLocation(FVector(0, 0, 25));
 		}	
 	}
-
 }
