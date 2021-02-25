@@ -2,6 +2,7 @@
 
 
 #include "../Public/PlayerFaceSelect.h"
+#include "../Public/MyGameInstance.h"
 
 void UPlayerFaceSelect::UseMyPlayer()
 {
@@ -9,5 +10,9 @@ void UPlayerFaceSelect::UseMyPlayer()
 	{
 		APlayerIGuess* p = Cast<APlayerIGuess>(player->GetDefaultObject());
 		OwningMenu->SetPlayerInformation(p->playerInfo);
+
+		UMyGameInstance* inst = Cast<UMyGameInstance>(GetWorld()->GetGameInstance());
+
+		inst->playerTemplate = player;
 	}
 }

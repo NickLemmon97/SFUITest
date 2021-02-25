@@ -14,19 +14,11 @@ void APlayerGameMode::BeginPlay()
 
 	if (inst)
 	{
-		GetWorld()->GetFirstPlayerController() ;
-		TArray<AActor*> actors;
+		FActorSpawnParameters params{ };
 
-		UGameplayStatics::GetAllActorsWithTag(GetWorld(), inst->searchTag, actors);
-		if (actors.IsValidIndex(0))
-		{
-			APawn* oldPawn = GetWorld()->GetFirstPlayerController()->GetPawn();
-			GetWorld()->GetFirstPlayerController()->UnPossess();
-			oldPawn->SetActorLocation(FVector(0, 0, -5000));
-			oldPawn->Destroy();
-
-			GetWorld()->GetFirstPlayerController()->Possess(Cast<APawn>(actors[0]));
-			GetWorld()->GetFirstPlayerController()->GetPawn()->SetActorLocation(FVector(0, 0, 25));
-		}	
+		APlayerIGuess* pla = GetWorld()->SpawnActor<APlayerIGuess>(inst->playerTemplate, params);
+		
+		GetWorld()->GetFirstPlayerController()->UnPossess();
+		GetWorld()->GetFirstPlayerController()->Possess(pla);
 	}
 }

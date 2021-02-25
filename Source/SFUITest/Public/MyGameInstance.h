@@ -17,4 +17,6 @@ class SFUITEST_API UMyGameInstance : public UGameInstance
 	
 public:
 	FName searchTag = " ";
+
+	TSubclassOf<class APlayerIGuess> playerTemplate;
 };
