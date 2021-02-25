@@ -16,7 +16,7 @@ class SFUITEST_API UMyGameInstance : public UGameInstance
 	GENERATED_BODY()
 	
 public:
-	FName searchTag = " ";
 
-	TSubclassOf<class APlayerIGuess> playerTemplate;
+	UPROPERTY(VisibleAnywhere)
+		TSubclassOf<class APlayerIGuess> playerTemplate;
 };

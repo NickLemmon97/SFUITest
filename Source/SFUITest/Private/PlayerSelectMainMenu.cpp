@@ -12,7 +12,8 @@ void UPlayerSelectMainMenu::NativeOnInitialized()
 	PlayerFaceButtonBlue->OwningMenu = this;
 	PlayerFaceButtonRed ->OwningMenu = this;
 
-	UProperty* Prop = GetClass()->PropertyLink;
+	//Search for the animation and set it
+	FProperty* Prop = GetClass()->PropertyLink;
 	while (Prop)
 	{
 		if (Prop->GetClass() == UObjectProperty::StaticClass())
@@ -38,22 +39,16 @@ void UPlayerSelectMainMenu::NativeOnInitialized()
 void UPlayerSelectMainMenu::NativeConstruct()
 {
 	Super::NativeConstruct();
-	PlayerInfoBox->AddToViewport();
+
 	if (OpenAnim)
 	{
 		PlayAnimation(OpenAnim, 0.0f, 1, EUMGSequencePlayMode::Forward, 2.0f, false);
 	}
 	
-	if (OwningMenuThing)
+	if (OwningMenu)
 	{
-		OwningMenuThing->PlayFastMoveTo();
+		OwningMenu->PlayFastMoveTo();
 	}
-}
-
-void UPlayerSelectMainMenu::NativeDestruct()
-{
-	Super::NativeDestruct();
-	PlayerInfoBox->RemoveFromViewport();
 }
 
 void UPlayerSelectMainMenu::SetPlayerInformation(FPlayerInformation player)

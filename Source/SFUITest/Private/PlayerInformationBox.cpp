@@ -14,16 +14,6 @@ void UPlayerInformationBox::NativeOnInitialized()
 	SelectButton->OnClicked.AddDynamic(this, &UPlayerInformationBox::SelectPlayer);
 }
 
-void UPlayerInformationBox::NativeConstruct()
-{
-	Super::NativeConstruct();
-}
-
-void UPlayerInformationBox::NativeDestruct()
-{
-	Super::NativeDestruct();
-}
-
 void UPlayerInformationBox::SetPlayerInformation(FPlayerInformation player)
 {
 	NameText->SetText(player.PlayerName );
@@ -34,19 +24,6 @@ void UPlayerInformationBox::SetPlayerInformation(FPlayerInformation player)
 	HealthBar-> SetPercent((300.0f / player.Health) / 10.0f);
 	OxygenBar-> SetPercent((300.0f / player.Oxygen) / 10.0f);
 	StaminaBar->SetPercent((300.0f/player.Stamina)  / 10.0f);
-
-	UMyGameInstance* inst = Cast<UMyGameInstance>(GetWorld()->GetGameInstance());
-
-	if (inst)
-	{
-		FString nTag = player.PlayerName.ToString();
-		inst->searchTag = *nTag ;
-	}
-}
-
-void UPlayerInformationBox::SetOwningMenu()
-{
-
 }
 
 void UPlayerInformationBox::SelectPlayer()

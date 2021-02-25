@@ -18,8 +18,6 @@ public:
 
 	void NativeOnInitialized() override;
 
-	void NativeConstruct() override;
-	void NativeDestruct() override;
 
 	UFUNCTION()
 	void ClickedPlay();

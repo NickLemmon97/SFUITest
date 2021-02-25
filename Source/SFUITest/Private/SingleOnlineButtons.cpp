@@ -29,7 +29,7 @@ void USingleOnlineButtons::NativeDestruct()
 
 void USingleOnlineButtons::SetOpenAnim()
 {
-	UProperty* Prop = GetClass()->PropertyLink;
+	FProperty* Prop = GetClass()->PropertyLink;
 	while (Prop)
 	{
 		if (Prop->GetClass() == UObjectProperty::StaticClass())

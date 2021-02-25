@@ -7,18 +7,15 @@
 #include "../Public/MyGameInstance.h"
 #include "../Public/MyPlayerController.h"
 
-void APlayerGameMode::BeginPlay()
-{
 
-	UMyGameInstance* inst = Cast<UMyGameInstance> ( GetWorld()->GetGameInstance() );
+void APlayerGameMode::InitGame(const FString& MapName, const FString& Options, FString& ErrorMessage)
+{
+	UMyGameInstance* inst = Cast<UMyGameInstance>(GetWorld()->GetGameInstance());
 
 	if (inst)
 	{
-		FActorSpawnParameters params{ };
-
-		APlayerIGuess* pla = GetWorld()->SpawnActor<APlayerIGuess>(inst->playerTemplate, params);
-		
-		GetWorld()->GetFirstPlayerController()->UnPossess();
-		GetWorld()->GetFirstPlayerController()->Possess(pla);
+		DefaultPawnClass = inst->playerTemplate;
 	}
+
+	Super::InitGame(MapName, Options, ErrorMessage);
 }

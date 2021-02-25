@@ -17,10 +17,6 @@ class SFUITEST_API UPlayerInformationBox : public UUserWidget
 public:
 
 	void NativeOnInitialized() override;
-	void NativeConstruct() override;
-	void NativeDestruct() override;
-	
-	void SetOwningMenu();
 
 	UFUNCTION()
 	void SelectPlayer();

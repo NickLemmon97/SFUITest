@@ -19,7 +19,6 @@ public:
 	//Overridden functions from UUSerWidget
 	void NativeOnInitialized() override;
 	void NativeConstruct() override;
-	void NativeDestruct() override;
 
 
 	//Takes a Player info to display on the menu

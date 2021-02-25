@@ -15,19 +15,7 @@ void UMainMenu::NativeOnInitialized()
 	PlayButton->OnClicked.AddDynamic(this, &UMainMenu::ClickedPlay);
 }
 
-void UMainMenu::NativeConstruct()
-{
-	Super::NativeConstruct();
-}
-
-void UMainMenu::NativeDestruct()
-{
-	Super::NativeDestruct();
-}
-
 void UMainMenu::ClickedPlay()
 {
 	OwningMenu->ModeButtons->AddToViewport();
 }
-
-

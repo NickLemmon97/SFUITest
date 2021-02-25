@@ -15,6 +15,6 @@ class SFUITEST_API APlayerGameMode : public AGameModeBase
 	GENERATED_BODY()
 public:
 
-	virtual void BeginPlay() override;
+	virtual void InitGame(const FString& MapName, const FString& Options, FString& ErrorMessage);
 
 };

@@ -13,6 +13,9 @@ void UPlayerFaceSelect::UseMyPlayer()
 
 		UMyGameInstance* inst = Cast<UMyGameInstance>(GetWorld()->GetGameInstance());
 
-		inst->playerTemplate = player;
+		if (inst)
+		{
+			inst->playerTemplate = player;
+		}
 	}
 }

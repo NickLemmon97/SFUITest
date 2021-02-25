@@ -10,12 +10,12 @@ void UMenuEntirety::NativeOnInitialized()
 {
 	Super::NativeOnInitialized();
 
-	MainMenu->AddToViewport();
+	//MainMenu->AddToViewport();
 	MainMenu->OwningMenu = this;
-	ModeButtons->RemoveFromViewport();
+	//ModeButtons->RemoveFromViewport();
 	ModeButtons->overallMainMenu = this;
-	PlayerSelect->RemoveFromViewport();
-	PlayerSelect->OwningMenuThing = this;
+	//PlayerSelect->RemoveFromViewport();
+	PlayerSelect->OwningMenu = this;
 
 	UProperty* Prop = GetClass()->PropertyLink;
 	while (Prop)
@@ -51,11 +51,6 @@ void UMenuEntirety::NativeConstruct()
 	if (StillSkyAnim)
 		PlayAnimation(StillSkyAnim, 0.0f, 0, EUMGSequencePlayMode::Forward, 0.5f, false);
 
-}
-
-void UMenuEntirety::NativeDestruct()
-{
-	Super::NativeDestruct();
 }
 
 void UMenuEntirety::PlayFastMoveTo()
