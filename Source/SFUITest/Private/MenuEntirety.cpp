@@ -10,11 +10,11 @@ void UMenuEntirety::NativeOnInitialized()
 {
 	Super::NativeOnInitialized();
 
-	//MainMenu->AddToViewport();
+	MainMenu->AddToViewport();
 	MainMenu->OwningMenu = this;
-	//ModeButtons->RemoveFromViewport();
+	ModeButtons->RemoveFromViewport();
 	ModeButtons->overallMainMenu = this;
-	//PlayerSelect->RemoveFromViewport();
+	PlayerSelect->RemoveFromViewport();
 	PlayerSelect->OwningMenu = this;
 
 	UProperty* Prop = GetClass()->PropertyLink;
@@ -40,8 +40,6 @@ void UMenuEntirety::NativeOnInitialized()
 		}
 		Prop = Prop->PropertyLinkNext;
 	}
-
-
 }
 
 void UMenuEntirety::NativeConstruct()
