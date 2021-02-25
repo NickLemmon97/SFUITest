@@ -1,4 +1,4 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+// Copyright Nick Lemmon
 
 #pragma once
 
@@ -19,7 +19,6 @@ public:
 	//Overriden functions from UUserWidget
 	void NativeOnInitialized() override;
 	void NativeConstruct() override;
-	void NativeDestruct() override;
 
 	//to be bound to SingleButton OnClicked
 	UFUNCTION()

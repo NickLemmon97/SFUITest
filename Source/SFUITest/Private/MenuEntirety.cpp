@@ -1,4 +1,4 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+// Copyright Nick Lemmon
 
 
 #include "../Public/MenuEntirety.h"
@@ -10,6 +10,8 @@ void UMenuEntirety::NativeOnInitialized()
 {
 	Super::NativeOnInitialized();
 
+	//Set up the owning widgets
+	//Set up the initial screen layout
 	MainMenu->AddToViewport();
 	MainMenu->OwningMenu = this;
 	ModeButtons->RemoveFromViewport();
@@ -17,12 +19,14 @@ void UMenuEntirety::NativeOnInitialized()
 	PlayerSelect->RemoveFromViewport();
 	PlayerSelect->OwningMenu = this;
 
-	UProperty* Prop = GetClass()->PropertyLink;
+
+	//Look for and find the animations that are part of this objects properties
+	FProperty* Prop = GetClass()->PropertyLink;
 	while (Prop)
 	{
-		if (Prop->GetClass() == UObjectProperty::StaticClass())
+		if (Prop->GetClass() == FObjectProperty::StaticClass())
 		{
-			UObjectProperty* ObjProp = Cast<UObjectProperty>(Prop);
+			FObjectProperty* ObjProp = Cast<FObjectProperty>(Prop);
 
 			if (ObjProp->PropertyClass == UWidgetAnimation::StaticClass())
 			{

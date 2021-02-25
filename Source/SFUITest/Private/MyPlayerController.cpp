@@ -1,12 +1,8 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+// Copyright Nick Lemmon
 
 
 #include "../Public/MyPlayerController.h"
 
-AMyPlayerController::AMyPlayerController()
-{
-
-}
 
 void AMyPlayerController::BeginPlay()
 {

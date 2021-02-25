@@ -1,4 +1,4 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+// Copyright Nick Lemmon
 
 
 #include "../Public/MainMenu.h"
@@ -12,6 +12,7 @@
 void UMainMenu::NativeOnInitialized()
 {
 	Super::NativeOnInitialized();
+
 	PlayButton->OnClicked.AddDynamic(this, &UMainMenu::ClickedPlay);
 }
 

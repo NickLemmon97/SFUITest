@@ -1,4 +1,4 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+// Copyright Nick Lemmon
 
 
 #include "..\Public\PlayerGameMode.h"
@@ -10,8 +10,8 @@
 
 void APlayerGameMode::InitGame(const FString& MapName, const FString& Options, FString& ErrorMessage)
 {
+	//Set the default pawn to our selected pawn
 	UMyGameInstance* inst = Cast<UMyGameInstance>(GetWorld()->GetGameInstance());
-
 	if (inst)
 	{
 		DefaultPawnClass = inst->playerTemplate;

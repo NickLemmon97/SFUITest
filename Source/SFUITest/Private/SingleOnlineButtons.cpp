@@ -1,5 +1,4 @@
-// Fill out your copyright notice in the Description page of Project Settings.
-
+// Copyright Nick Lemmon
 
 #include "../Public/SingleOnlineButtons.h"
 #include "Components/Button.h"
@@ -22,19 +21,14 @@ void USingleOnlineButtons::NativeConstruct()
 	}
 }
 
-void USingleOnlineButtons::NativeDestruct()
-{
-	Super::NativeDestruct();
-}
-
 void USingleOnlineButtons::SetOpenAnim()
 {
 	FProperty* Prop = GetClass()->PropertyLink;
 	while (Prop)
 	{
-		if (Prop->GetClass() == UObjectProperty::StaticClass())
+		if (Prop->GetClass() == FObjectProperty::StaticClass())
 		{
-			UObjectProperty* ObjProp = Cast<UObjectProperty>(Prop);
+			FObjectProperty* ObjProp = Cast<FObjectProperty>(Prop);
 
 			if (ObjProp->PropertyClass == UWidgetAnimation::StaticClass())
 			{

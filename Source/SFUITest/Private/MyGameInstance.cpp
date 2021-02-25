@@ -1,5 +1,6 @@
-// Fill out your copyright notice in the Description page of Project Settings.
-
+// Copyright Nick Lemmon
 
 #include "../Public/MyGameInstance.h"
-#include "../Public/PlayerIGuess.h"
+
+
+//Intentionally left blank
