@@ -9,7 +9,8 @@
 #include "PlayerFaceSelect.generated.h"
 
 /**
- * 
+ * The following is the player select button
+ * Originally named for the plan to have an image appear inside the button of the chosen character
  */
 UCLASS()
 class SFUITEST_API UPlayerFaceSelect : public UButton

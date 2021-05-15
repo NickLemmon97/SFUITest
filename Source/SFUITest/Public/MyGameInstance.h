@@ -8,7 +8,7 @@
 #include "MyGameInstance.generated.h"
 
 /**
- * 
+ * The following game instance saves a reference to the player that was selected
  */
 UCLASS()
 class SFUITEST_API UMyGameInstance : public UGameInstance

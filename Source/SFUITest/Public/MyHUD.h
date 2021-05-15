@@ -7,7 +7,7 @@
 #include "MyHUD.generated.h"
 
 /**
- * 
+ * The main menu HUD class that spawns the main menu switcher widget on screen
  */
 UCLASS()
 class SFUITEST_API AMyHUD : public AHUD

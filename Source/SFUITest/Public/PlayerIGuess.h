@@ -6,6 +6,10 @@
 #include "GameFramework/Pawn.h"
 #include "PlayerIGuess.generated.h"
 
+/**
+ * The player information struct holds the information about our player
+ * allows us to pass the players information around without passing the entire actor
+ */
 
 USTRUCT()
 struct FPlayerInformation
@@ -33,6 +37,11 @@ public:
 
 };
 
+/**
+ * The following actor is the main actor that is spawned in game
+ * The blueprints created allow for many characters to be created with the same basics
+ * A reference is saved in the buttons and the buttons get the players information to display to the UI
+ */
 
 UCLASS()
 class SFUITEST_API APlayerIGuess : public APawn

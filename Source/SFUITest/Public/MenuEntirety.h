@@ -7,7 +7,8 @@
 #include "MenuEntirety.generated.h"
 
 /**
- * 
+ * The following class acts as a menu switcher
+ * It contains the internal menus and handles switching between them
  */
 UCLASS()
 class SFUITEST_API UMenuEntirety : public UUserWidget

@@ -32,6 +32,8 @@ public:
 		class UPlayerFaceSelect* PlayerFaceButtonBlue = nullptr;
 	UPROPERTY(meta = (BindWidget))
 		class UPlayerFaceSelect* PlayerFaceButtonRed = nullptr;
+	UPROPERTY(meta = (BindWidget))
+		class UPlayerFaceSelect* PlayerFaceButtonGreen = nullptr;
 
 
 	class UMenuEntirety* OwningMenu = nullptr;

@@ -9,8 +9,9 @@
 
 void UPlayerSelectMainMenu::NativeOnInitialized()
 {
-	PlayerFaceButtonBlue->OwningMenu = this;
-	PlayerFaceButtonRed ->OwningMenu = this;
+	PlayerFaceButtonBlue ->OwningMenu = this;
+	PlayerFaceButtonRed  ->OwningMenu = this;
+	PlayerFaceButtonGreen->OwningMenu = this;
 
 	//Search for the animation and set it
 	FProperty* Prop = GetClass()->PropertyLink;

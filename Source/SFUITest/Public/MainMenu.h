@@ -7,7 +7,8 @@
 #include "MainMenu.generated.h"
 
 /**
- * 
+ * This class is the main menu
+ * It contains all the UI items that would appear on the main menu
  */
 UCLASS()
 class SFUITEST_API UMainMenu : public UUserWidget
