@@ -1,11 +1,11 @@
 // Copyright Nick Lemmon
 
 
-#include "../Public/PlayerIGuess.h"
+#include "../Public/PlayerCharacter.h"
 #include "Components/StaticMeshComponent.h"
 
 // Sets default values
-APlayerIGuess::APlayerIGuess()
+APlayerCharacter::APlayerCharacter()
 {
  	// Set this pawn to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;

@@ -31,6 +31,6 @@ public:
 		class USingleOnlineButtons* ModeButtons = nullptr;
 
 	UPROPERTY(meta = (BindWidget))
-		class UPlayerSelectMainMenu* PlayerSelect = nullptr;
+		class UPlayerSelectMenu* PlayerSelect = nullptr;
 
 };

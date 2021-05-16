@@ -4,30 +4,30 @@
 
 #include "CoreMinimal.h"
 #include "Components/Button.h"
-#include "PlayerIGuess.h"
-#include "PlayerSelectMainMenu.h"
-#include "PlayerFaceSelect.generated.h"
+#include "PlayerCharacter.h"
+#include "PlayerSelectMenu.h"
+#include "PlayerSelectButton.generated.h"
 
 /**
  * The following is the player select button
  * Originally named for the plan to have an image appear inside the button of the chosen character
  */
 UCLASS()
-class SFUITEST_API UPlayerFaceSelect : public UButton
+class SFUITEST_API UPlayerSelectButton : public UButton
 {
 	GENERATED_BODY()
 
 public:
 
 	UPROPERTY(EditAnywhere)
-		TSubclassOf<APlayerIGuess> player = nullptr;
+		TSubclassOf<APlayerCharacter> player = nullptr;
 
-	UPlayerSelectMainMenu* OwningMenu = nullptr;
+	UPlayerSelectMenu* OwningMenu = nullptr;
 
 	
-	UPlayerFaceSelect()
+	UPlayerSelectButton()
 	{
-		OnClicked.AddDynamic(this, &UPlayerFaceSelect::UseMyPlayer);
+		OnClicked.AddDynamic(this, &UPlayerSelectButton::UseMyPlayer);
 	}
 
 	UFUNCTION()

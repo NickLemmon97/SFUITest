@@ -3,7 +3,7 @@
 
 #include "../Public/MenuEntirety.h"
 #include "../Public/MainMenu.h"
-#include "../Public/PlayerSelectMainMenu.h"
+#include "../Public/PlayerSelectMenu.h"
 #include "../Public/SingleOnlineButtons.h"
 
 void UMenuEntirety::NativeOnInitialized()

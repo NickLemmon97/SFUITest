@@ -4,7 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "Engine/GameInstance.h"
-#include "PlayerIGuess.h"
+#include "PlayerCharacter.h"
 #include "MyGameInstance.generated.h"
 
 /**
@@ -18,5 +18,5 @@ class SFUITEST_API UMyGameInstance : public UGameInstance
 public:
 
 	UPROPERTY(VisibleAnywhere)
-		TSubclassOf<class APlayerIGuess> playerTemplate;
+		TSubclassOf<class APlayerCharacter> playerTemplate;
 };

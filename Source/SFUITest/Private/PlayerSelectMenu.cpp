@@ -1,25 +1,25 @@
 // Copyright Nick Lemmon
 
 
-#include "../Public/PlayerSelectMainMenu.h"
+#include "../Public/PlayerSelectMenu.h"
 #include "../Public/PlayerInformationBox.h"
-#include "../Public/PlayerFaceSelect.h"
+#include "../Public/PlayerSelectButton.h"
 #include "../Public/MenuEntirety.h"
 #include "Kismet/GameplayStatics.h"
 
-void UPlayerSelectMainMenu::NativeOnInitialized()
+void UPlayerSelectMenu::NativeOnInitialized()
 {
-	PlayerFaceButtonBlue ->OwningMenu = this;
-	PlayerFaceButtonRed  ->OwningMenu = this;
-	PlayerFaceButtonGreen->OwningMenu = this;
+	PlayerButtonBlue ->OwningMenu = this;
+	PlayerButtonRed  ->OwningMenu = this;
+	PlayerButtonGreen->OwningMenu = this;
 
 	//Search for the animation and set it
 	FProperty* Prop = GetClass()->PropertyLink;
 	while (Prop)
 	{
-		if (Prop->GetClass() == UObjectProperty::StaticClass())
+		if (Prop->GetClass() == FObjectProperty::StaticClass())
 		{
-			UObjectProperty* ObjProp = Cast<UObjectProperty>(Prop);
+			FObjectProperty* ObjProp = Cast<FObjectProperty>(Prop);
 
 			if (ObjProp->PropertyClass == UWidgetAnimation::StaticClass())
 			{
@@ -36,7 +36,7 @@ void UPlayerSelectMainMenu::NativeOnInitialized()
 	}
 }
 
-void UPlayerSelectMainMenu::NativeConstruct()
+void UPlayerSelectMenu::NativeConstruct()
 {
 	Super::NativeConstruct();
 
@@ -51,7 +51,7 @@ void UPlayerSelectMainMenu::NativeConstruct()
 	}
 }
 
-void UPlayerSelectMainMenu::SetPlayerInformation(FPlayerInformation player)
+void UPlayerSelectMenu::SetPlayerInformation(FPlayerInformation player)
 {
 	PlayerInfoBox->SetPlayerInformation(player);
 }

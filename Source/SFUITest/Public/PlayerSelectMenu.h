@@ -4,14 +4,14 @@
 
 #include "CoreMinimal.h"
 #include "Blueprint/UserWidget.h"
-#include "PlayerIGuess.h"
-#include "PlayerSelectMainMenu.generated.h"
+#include "PlayerCharacter.h"
+#include "PlayerSelectMenu.generated.h"
 
 /**
  * 
  */
 UCLASS()
-class SFUITEST_API UPlayerSelectMainMenu : public UUserWidget
+class SFUITEST_API UPlayerSelectMenu : public UUserWidget
 {
 	GENERATED_BODY()
 public:
@@ -29,11 +29,11 @@ public:
 		class UPlayerInformationBox* PlayerInfoBox = nullptr;
 
 	UPROPERTY(meta = (BindWidget))
-		class UPlayerFaceSelect* PlayerFaceButtonBlue = nullptr;
+		class UPlayerSelectButton* PlayerButtonBlue = nullptr;
 	UPROPERTY(meta = (BindWidget))
-		class UPlayerFaceSelect* PlayerFaceButtonRed = nullptr;
+		class UPlayerSelectButton* PlayerButtonRed = nullptr;
 	UPROPERTY(meta = (BindWidget))
-		class UPlayerFaceSelect* PlayerFaceButtonGreen = nullptr;
+		class UPlayerSelectButton* PlayerButtonGreen = nullptr;
 
 
 	class UMenuEntirety* OwningMenu = nullptr;

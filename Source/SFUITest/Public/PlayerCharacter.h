@@ -4,7 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Pawn.h"
-#include "PlayerIGuess.generated.h"
+#include "PlayerCharacter.generated.h"
 
 /**
  * The player information struct holds the information about our player
@@ -44,13 +44,13 @@ public:
  */
 
 UCLASS()
-class SFUITEST_API APlayerIGuess : public APawn
+class SFUITEST_API APlayerCharacter : public APawn
 {
 	GENERATED_BODY()
 
 public:
 	// Sets default values for this pawn's properties
-	APlayerIGuess();
+	APlayerCharacter();
 
 	UPROPERTY(EditAnywhere)
 		FPlayerInformation playerInfo;
